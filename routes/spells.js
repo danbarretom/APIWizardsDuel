@@ -6,7 +6,6 @@ const { NUMBER_OF_SPELLS_RETURNED } = require('../constants');
 
 router.get('/spells', async (req, res) => {
   try {
-    // Agora ele só chama a função do serviço, ficou muito limpo!
     const shuffledSpells = await fetchAndProcessSpells();
 
     res.json({ spells: shuffledSpells.slice(0, NUMBER_OF_SPELLS_RETURNED) });

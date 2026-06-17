@@ -1,9 +1,5 @@
 /* eslint-env browser */
 
-// ─── COMUNICAÇÃO COM A API (BACK-END) ─────────────────
-
-// Ao atrelar a função ao objeto window, garantimos que ela esteja
-// disponível globalmente para o game.js acessar, e evitamos avisos do linter.
 window.fetchPackData = async function fetchPackData() {
   const response = await fetch('/api/pack');
   // O Linter pediu para removermos o "await" no retorno de funções async

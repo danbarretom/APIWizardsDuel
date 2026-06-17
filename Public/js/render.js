@@ -1,7 +1,5 @@
 /* eslint-env browser */
 
-// ─── FUNÇÕES DE RENDERIZAÇÃO E UI ─────────────────────
-
 window.getHouseColor = function getHouseColor(h) {
   if (h === 'Gryffindor') return '#6b1010';
   if (h === 'Slytherin') return '#0a3018';

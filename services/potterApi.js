@@ -1,7 +1,6 @@
 const fetch = require('node-fetch');
 const { API_BASE_URL, MAX_RANDOM_PAGES, PAGE_SIZE } = require('../constants');
 
-// Importamos a "matemática" do outro serviço
 const {
   calculatePower,
   calculateMagic,

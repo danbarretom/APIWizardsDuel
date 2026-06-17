@@ -1,5 +1,3 @@
-// --- Constantes ---
-// Remoção de "Magic Numbers".
 const API_BASE_URL = 'https://api.potterdb.com/v1';
 const MAX_RANDOM_PAGES = 8;
 const PAGE_SIZE = 100;

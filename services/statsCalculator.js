@@ -1,4 +1,3 @@
-// Importamos apenas os números necessários para cálculos
 const {
   DEFAULT_POWER,
   GRYFFINDOR_POWER,

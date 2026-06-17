@@ -1,8 +1,5 @@
 /* eslint-env browser */
 
-// ─── ESTADO GLOBAL E LÓGICA DO JOGO ───────────────────
-
-// Atrelamos o state ao window e renomeamos para gameState por clareza
 window.gameState = {
   phase: 'loading',
   pack: [],
