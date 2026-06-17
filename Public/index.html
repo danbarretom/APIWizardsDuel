@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Wizard Duel</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=MedievalSharp&family=Cinzel:wght@400;600;700&family=Cinzel+Decorative:wght@700;900&family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <div id="screen-loading">
+      <div class="load-glyph">⚡</div>
+      <div class="load-title">Wizard Duel</div>
+      <div class="load-bar-wrap"><div class="load-bar" id="loadBar"></div></div>
+      <div class="load-msg" id="loadMsg">Preparando o grimório...</div>
+    </div>
+
+    <div class="screen" id="screen-draft">
+      <div class="page-header">
+        <div class="page-title">⚡ Wizard Duel</div>
+        <div class="page-sub">Escolha seus bruxos — monte seu deck</div>
+      </div>
+
+      <div class="draft-header">
+        <div class="draft-instruction">Escolha 2 bruxos do seu pack</div>
+        <div class="draft-counter">
+          <span id="draftCount">0</span> <span>/ 2 selecionados</span>
+        </div>
+      </div>
+
+      <div class="pack-grid" id="packGrid"></div>
+
+      <div class="draft-footer">
+        <button
+          class="btn btn-lg"
+          id="btnConfirmDraft"
+          onclick="window.confirmDraft()"
+          disabled
+        >
+          ⚔ Iniciar Duelo
+        </button>
+        <button class="btn" onclick="window.rerollPack()">🎲 Novo Pack</button>
+      </div>
+    </div>
+
+    <div class="screen" id="screen-battle">
+      <div class="page-header">
+        <div class="page-title">⚔ Duelo em Curso</div>
+      </div>
+
+      <div class="scoreboard">
+        <div class="score-block">
+          <div class="score-lbl">Você</div>
+          <div class="score-num" id="scoreP">0</div>
+        </div>
+        <div class="score-sep">✦</div>
+        <div class="score-block">
+          <div class="score-lbl">CPU</div>
+          <div class="score-num" id="scoreC">0</div>
+        </div>
+      </div>
+
+      <div class="status-msg" id="battleStatus">
+        Escolha um feitiço para atacar!
+      </div>
+
+      <div class="battle-layout">
+        <div class="battle-zone">
+          <div class="zone-header">
+            ✦ Seus Bruxos
+            <span class="name" id="playerActiveName">—</span>
+          </div>
+          <div id="playerCardSlot"></div>
+          <div class="deck-badges" id="playerDeckBadges"></div>
+          <div class="spell-panel">
+            <div class="spell-panel-title">⚡ Seus Feitiços</div>
+            <div class="spell-list" id="spellList"></div>
+          </div>
+        </div>
+
+        <div class="battle-center">
+          <div class="vs-emblem">VS</div>
+          <div class="round-info">Rodada<strong id="roundNum">1</strong></div>
+          <div class="battle-log" id="battleLog"></div>
+
+          <button
+            class="btn"
+            id="btnNext"
+            onclick="window.nextRound()"
+            style="display: none"
+          >
+            Próxima Rodada →
+          </button>
+        </div>
+
+        <div class="battle-zone">
+          <div class="zone-header">
+            ⚔ Bruxo CPU
+            <span class="name" id="cpuActiveName">—</span>
+          </div>
+          <div id="cpuCardSlot"></div>
+          <div class="deck-badges" id="cpuDeckBadges"></div>
+        </div>
+      </div>
+    </div>
+
+    <div id="screen-over">
+      <div class="over-box">
+        <span class="over-glyph" id="overGlyph">🏆</span>
+        <div class="over-title" id="overTitle">Vitória!</div>
+        <div class="over-sub" id="overSub">O duelo terminou</div>
+        <span class="over-score" id="overScore"></span>
+        <button class="btn btn-lg" onclick="window.restartGame()">
+          ⚡ Jogar Novamente
+        </button>
+      </div>
+    </div>
+
+    <script src="js/api.js"></script>
+    <script src="js/render.js"></script>
+    <script src="js/game.js"></script>
+  </body>
+</html>
